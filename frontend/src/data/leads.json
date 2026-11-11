@@ -1,0 +1,156 @@
+[
+  {
+    "id": "LEAD-1794374269",
+    "name": "Rajesh Kumar",
+    "phone": "9876543210",
+    "city": "Pune",
+    "stateName": "Maharashtra",
+    "capacityKw": 3.0,
+    "subsidyAmount": 78000.0,
+    "submittedAt": "2026-11-11T10:47:49.776200",
+    "status": "NEW"
+  },
+  {
+    "id": "LEAD-1794375440",
+    "name": "Rajesh Kumar",
+    "phone": "9876543210",
+    "city": "Pune",
+    "stateName": "Maharashtra",
+    "capacityKw": 3.0,
+    "subsidyAmount": 78000.0,
+    "submittedAt": "2026-11-11T11:07:20.155010",
+    "status": "NEW"
+  },
+  {
+    "id": "LEAD-1794382091",
+    "name": "Rajesh Kumar",
+    "phone": "9876543210",
+    "city": "Pune",
+    "stateName": "Maharashtra",
+    "capacityKw": 3.0,
+    "subsidyAmount": 78000.0,
+    "submittedAt": "2026-11-11T12:58:11.132775",
+    "status": "NEW"
+  },
+  {
+    "id": "LEAD-1794387271",
+    "name": "Rajesh Kumar",
+    "phone": "9876543210",
+    "city": "Pune",
+    "stateName": "Maharashtra",
+    "capacityKw": 3.0,
+    "subsidyAmount": 78000.0,
+    "submittedAt": "2026-11-11T14:24:31.412431",
+    "status": "NEW"
+  },
+  {
+    "id": "LEAD-1794387731",
+    "name": "Rajesh Kumar",
+    "phone": "9876543210",
+    "city": "Pune",
+    "stateName": "Maharashtra",
+    "capacityKw": 3.0,
+    "subsidyAmount": 78000.0,
+    "submittedAt": "2026-11-11T14:32:11.836528",
+    "status": "NEW"
+  },
+  {
+    "id": "LEAD-1794388312",
+    "name": "Rajesh Kumar",
+    "phone": "9876543210",
+    "city": "Pune",
+    "stateName": "Maharashtra",
+    "capacityKw": 3.0,
+    "subsidyAmount": 78000.0,
+    "submittedAt": "2026-11-11T14:41:52.916023",
+    "status": "NEW"
+  },
+  {
+    "id": "LEAD-1794388913",
+    "name": "Rajesh Kumar",
+    "phone": "9876543210",
+    "city": "Pune",
+    "stateName": "Maharashtra",
+    "capacityKw": 3.0,
+    "subsidyAmount": 78000.0,
+    "submittedAt": "2026-11-11T14:51:53.751132",
+    "status": "NEW"
+  },
+  {
+    "id": "LEAD-1794389639",
+    "name": "Rajesh Kumar",
+    "phone": "9876543210",
+    "city": "Pune",
+    "stateName": "Maharashtra",
+    "capacityKw": 3.0,
+    "subsidyAmount": 78000.0,
+    "submittedAt": "2026-11-11T15:03:59.280481",
+    "status": "NEW"
+  },
+  {
+    "id": "LEAD-1794391115",
+    "name": "Rajesh Kumar",
+    "phone": "9876543210",
+    "city": "Pune",
+    "stateName": "Maharashtra",
+    "capacityKw": 3.0,
+    "subsidyAmount": 78000.0,
+    "submittedAt": "2026-11-11T15:28:35.194939",
+    "status": "NEW"
+  },
+  {
+    "id": "LEAD-1794391145",
+    "name": "Rajesh Kumar",
+    "phone": "9876543210",
+    "city": "Pune",
+    "stateName": "Maharashtra",
+    "capacityKw": 3.0,
+    "subsidyAmount": 78000.0,
+    "submittedAt": "2026-11-11T15:29:05.988120",
+    "status": "NEW"
+  },
+  {
+    "id": "LEAD-1794393494",
+    "name": "Rajesh Kumar",
+    "phone": "9876543210",
+    "city": "Pune",
+    "stateName": "Maharashtra",
+    "capacityKw": 3.0,
+    "subsidyAmount": 78000.0,
+    "submittedAt": "2026-11-11T16:08:14.179960",
+    "status": "NEW"
+  },
+  {
+    "id": "LEAD-1794393785",
+    "name": "Rajesh Kumar",
+    "phone": "9876543210",
+    "city": "Pune",
+    "stateName": "Maharashtra",
+    "capacityKw": 3.0,
+    "subsidyAmount": 78000.0,
+    "submittedAt": "2026-11-11T16:13:05.642967",
+    "status": "NEW"
+  },
+  {
+    "id": "LEAD-1794394913",
+    "name": "Rajesh Kumar",
+    "phone": "9876543210",
+    "city": "Pune",
+    "stateName": "Maharashtra",
+    "capacityKw": 3.0,
+    "subsidyAmount": 78000.0,
+    "submittedAt": "2026-11-11T16:31:53.255971",
+    "status": "NEW"
+  },
+  {
+    "id": "LEAD-1794395171",
+    "name": "Rajesh Kumar",
+    "phone": "9876543210",
+    "city": "Pune",
+    "stateName": "Maharashtra",
+    "capacityKw": 3.0,
+    "subsidyAmount": 78000.0,
+    "submittedAt": "2026-11-11T16:36:11.936040",
+    "status": "NEW"
+  }
+]

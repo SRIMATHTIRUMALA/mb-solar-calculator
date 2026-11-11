@@ -1,0 +1,62 @@
+[
+  {
+    "description": "Standard Residential - Maharashtra (Average bill ₹2,500)",
+    "input": {
+      "stateId": 21,
+      "category": 1,
+      "averageBill": 2500,
+      "areaType": 1,
+      "roofArea": 1000
+    },
+    "expected": {
+      "capacityKw": 2.0,
+      "subsidyCost": 60000.0,
+      "projectCost": 130000.0,
+      "consumerShare": 70000.0
+    }
+  },
+  {
+    "description": "Standard Residential - Delhi (High bill ₹5,000, 3kW+ cap test)",
+    "input": {
+      "stateId": 9,
+      "category": 1,
+      "averageBill": 5000,
+      "areaType": 1,
+      "roofArea": 1000
+    },
+    "expected": {
+      "capacityKw": 3.0,
+      "subsidyCost": 78000.0,
+      "projectCost": 180000.0,
+      "consumerShare": 102000.0
+    }
+  },
+  {
+    "description": "Special Category State - Himachal Pradesh (Higher CFA cap test)",
+    "input": {
+      "stateId": 13,
+      "category": 1,
+      "averageBill": 4500,
+      "areaType": 1,
+      "roofArea": 1000
+    },
+    "expected": {
+      "capacityKw": 3.0,
+      "subsidyCost": 85800.0
+    }
+  },
+  {
+    "description": "Commercial Category - Gujarat (Zero subsidy test)",
+    "input": {
+      "stateId": 11,
+      "category": 4,
+      "averageBill": 15000,
+      "areaType": 1,
+      "roofArea": 2000
+    },
+    "expected": {
+      "subsidyCost": 0.0
+    }
+  }
+]
+

@@ -1,0 +1,291 @@
+[
+  {
+    "stateId": 1,
+    "stateName": "Andaman and Nicobar Islands",
+    "avgTariff": 6.8,
+    "dailyYield": 4.1,
+    "isSpecialCategory": true,
+    "discoms": ["Electricity Department Andaman & Nicobar"]
+  },
+  {
+    "stateId": 2,
+    "stateName": "Andhra Pradesh",
+    "avgTariff": 7.2,
+    "dailyYield": 4.5,
+    "isSpecialCategory": false,
+    "discoms": ["APEPDCL", "APSPDCL", "APCPDCL"]
+  },
+  {
+    "stateId": 3,
+    "stateName": "Arunachal Pradesh",
+    "avgTariff": 5.5,
+    "dailyYield": 3.8,
+    "isSpecialCategory": true,
+    "discoms": ["Department of Power Arunachal Pradesh"]
+  },
+  {
+    "stateId": 4,
+    "stateName": "Assam",
+    "avgTariff": 7.0,
+    "dailyYield": 4.0,
+    "isSpecialCategory": true,
+    "discoms": ["APDCL"]
+  },
+  {
+    "stateId": 5,
+    "stateName": "Bihar",
+    "avgTariff": 6.9,
+    "dailyYield": 4.2,
+    "isSpecialCategory": false,
+    "discoms": ["NBPDCL", "SBPDCL"]
+  },
+  {
+    "stateId": 6,
+    "stateName": "Chandigarh",
+    "avgTariff": 5.8,
+    "dailyYield": 4.3,
+    "isSpecialCategory": false,
+    "discoms": ["Chandigarh Electricity Department"]
+  },
+  {
+    "stateId": 7,
+    "stateName": "Chhattisgarh",
+    "avgTariff": 6.1,
+    "dailyYield": 4.4,
+    "isSpecialCategory": false,
+    "discoms": ["CSPDCL"]
+  },
+  {
+    "stateId": 8,
+    "stateName": "Dadra and Nagar Haveli and Daman and Diu",
+    "avgTariff": 5.4,
+    "dailyYield": 4.4,
+    "isSpecialCategory": false,
+    "discoms": ["DNH Power Distribution"]
+  },
+  {
+    "stateId": 9,
+    "stateName": "Delhi",
+    "avgTariff": 7.5,
+    "dailyYield": 4.3,
+    "isSpecialCategory": false,
+    "discoms": ["BSES Rajdhani", "BSES Yamuna", "Tata Power DDL", "NDMC"]
+  },
+  {
+    "stateId": 10,
+    "stateName": "Goa",
+    "avgTariff": 5.2,
+    "dailyYield": 4.3,
+    "isSpecialCategory": false,
+    "discoms": ["Goa Electricity Department"]
+  },
+  {
+    "stateId": 11,
+    "stateName": "Gujarat",
+    "avgTariff": 6.7,
+    "dailyYield": 4.8,
+    "isSpecialCategory": false,
+    "discoms": ["UGVCL", "DGVCL", "MGVCL", "PGVCL", "Torrent Power"]
+  },
+  {
+    "stateId": 12,
+    "stateName": "Haryana",
+    "avgTariff": 6.6,
+    "dailyYield": 4.3,
+    "isSpecialCategory": false,
+    "discoms": ["DHBVN", "UHBVN"]
+  },
+  {
+    "stateId": 13,
+    "stateName": "Himachal Pradesh",
+    "avgTariff": 5.6,
+    "dailyYield": 4.0,
+    "isSpecialCategory": true,
+    "discoms": ["HPSEBL"]
+  },
+  {
+    "stateId": 14,
+    "stateName": "Jammu and Kashmir",
+    "avgTariff": 5.2,
+    "dailyYield": 4.1,
+    "isSpecialCategory": true,
+    "discoms": ["JPDCL", "KPDCL"]
+  },
+  {
+    "stateId": 15,
+    "stateName": "Jharkhand",
+    "avgTariff": 6.3,
+    "dailyYield": 4.3,
+    "isSpecialCategory": false,
+    "discoms": ["JBVNL"]
+  },
+  {
+    "stateId": 16,
+    "stateName": "Karnataka",
+    "avgTariff": 7.8,
+    "dailyYield": 4.6,
+    "isSpecialCategory": false,
+    "discoms": ["BESCOM", "MESCOM", "HESCOM", "GESCOM", "CESC"]
+  },
+  {
+    "stateId": 17,
+    "stateName": "Kerala",
+    "avgTariff": 6.8,
+    "dailyYield": 4.2,
+    "isSpecialCategory": false,
+    "discoms": ["KSEB"]
+  },
+  {
+    "stateId": 18,
+    "stateName": "Ladakh",
+    "avgTariff": 5.4,
+    "dailyYield": 4.6,
+    "isSpecialCategory": true,
+    "discoms": ["Ladakh Power Development Department"]
+  },
+  {
+    "stateId": 19,
+    "stateName": "Lakshadweep",
+    "avgTariff": 6.5,
+    "dailyYield": 4.2,
+    "isSpecialCategory": true,
+    "discoms": ["Lakshadweep Electricity Department"]
+  },
+  {
+    "stateId": 20,
+    "stateName": "Madhya Pradesh",
+    "avgTariff": 7.0,
+    "dailyYield": 4.5,
+    "isSpecialCategory": false,
+    "discoms": ["MPPKVVCL (West)", "MPPKVVCL (East)", "MPMKVVCL (Central)"]
+  },
+  {
+    "stateId": 21,
+    "stateName": "Maharashtra",
+    "avgTariff": 8.5,
+    "dailyYield": 4.5,
+    "isSpecialCategory": false,
+    "discoms": ["MSEDCL (Mahavitaran)", "Tata Power Mumbai", "Adani Electricity", "BEST"]
+  },
+  {
+    "stateId": 22,
+    "stateName": "Manipur",
+    "avgTariff": 6.0,
+    "dailyYield": 3.9,
+    "isSpecialCategory": true,
+    "discoms": ["MSPDCL"]
+  },
+  {
+    "stateId": 23,
+    "stateName": "Meghalaya",
+    "avgTariff": 6.2,
+    "dailyYield": 3.9,
+    "isSpecialCategory": true,
+    "discoms": ["MePDCL"]
+  },
+  {
+    "stateId": 24,
+    "stateName": "Mizoram",
+    "avgTariff": 5.9,
+    "dailyYield": 3.9,
+    "isSpecialCategory": true,
+    "discoms": ["P&ED Mizoram"]
+  },
+  {
+    "stateId": 25,
+    "stateName": "Nagaland",
+    "avgTariff": 6.2,
+    "dailyYield": 3.8,
+    "isSpecialCategory": true,
+    "discoms": ["Department of Power Nagaland"]
+  },
+  {
+    "stateId": 26,
+    "stateName": "Odisha",
+    "avgTariff": 6.1,
+    "dailyYield": 4.3,
+    "isSpecialCategory": false,
+    "discoms": ["TPCODL", "TPNODL", "TPSODL", "TPWODL"]
+  },
+  {
+    "stateId": 27,
+    "stateName": "Puducherry",
+    "avgTariff": 5.7,
+    "dailyYield": 4.4,
+    "isSpecialCategory": false,
+    "discoms": ["Electricity Department Puducherry"]
+  },
+  {
+    "stateId": 28,
+    "stateName": "Punjab",
+    "avgTariff": 6.9,
+    "dailyYield": 4.3,
+    "isSpecialCategory": false,
+    "discoms": ["PSPCL"]
+  },
+  {
+    "stateId": 29,
+    "stateName": "Rajasthan",
+    "avgTariff": 7.6,
+    "dailyYield": 5.0,
+    "isSpecialCategory": false,
+    "discoms": ["JVVNL", "AVVNL", "JdVVNL"]
+  },
+  {
+    "stateId": 30,
+    "stateName": "Sikkim",
+    "avgTariff": 5.0,
+    "dailyYield": 3.8,
+    "isSpecialCategory": true,
+    "discoms": ["Power Department Sikkim"]
+  },
+  {
+    "stateId": 31,
+    "stateName": "Tamil Nadu",
+    "avgTariff": 6.8,
+    "dailyYield": 4.6,
+    "isSpecialCategory": false,
+    "discoms": ["TANGEDCO"]
+  },
+  {
+    "stateId": 32,
+    "stateName": "Telangana",
+    "avgTariff": 7.4,
+    "dailyYield": 4.5,
+    "isSpecialCategory": false,
+    "discoms": ["TSSPDCL", "TSNPDCL"]
+  },
+  {
+    "stateId": 33,
+    "stateName": "Tripura",
+    "avgTariff": 6.2,
+    "dailyYield": 3.9,
+    "isSpecialCategory": true,
+    "discoms": ["TSECL"]
+  },
+  {
+    "stateId": 34,
+    "stateName": "Uttar Pradesh",
+    "avgTariff": 7.3,
+    "dailyYield": 4.3,
+    "isSpecialCategory": false,
+    "discoms": ["PVVNL", "DVVNL", "MVVNL", "PuVVNL", "KESCO", "NPCL"]
+  },
+  {
+    "stateId": 35,
+    "stateName": "Uttarakhand",
+    "avgTariff": 5.9,
+    "dailyYield": 4.2,
+    "isSpecialCategory": true,
+    "discoms": ["UPCL"]
+  },
+  {
+    "stateId": 36,
+    "stateName": "West Bengal",
+    "avgTariff": 7.8,
+    "dailyYield": 4.2,
+    "isSpecialCategory": false,
+    "discoms": ["WBSEDCL", "CESC Kolkata"]
+  }
+]
+

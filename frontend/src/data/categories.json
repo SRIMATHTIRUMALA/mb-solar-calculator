@@ -1,0 +1,9 @@
+[
+  { "keyID": 1, "value": "Residential (Individual Household)", "isSubsidyEligible": true, "subsidyType": "PM Surya Ghar (Up to ₹78,000)" },
+  { "keyID": 2, "value": "Group Housing Society (GHS / RWA - Common Facilities)", "isSubsidyEligible": true, "subsidyType": "PM Surya Ghar (₹18,000/kW up to 500 kW)" },
+  { "keyID": 3, "value": "Commercial / Offices", "isSubsidyEligible": false, "subsidyType": "40% Accelerated Depreciation (Tax Benefit)" },
+  { "keyID": 4, "value": "Industrial", "isSubsidyEligible": false, "subsidyType": "High Daytime Grid Offset" },
+  { "keyID": 5, "value": "Institutional (Schools / Colleges / Hospitals)", "isSubsidyEligible": false, "subsidyType": "Captive Green Energy" },
+  { "keyID": 6, "value": "Government Buildings", "isSubsidyEligible": false, "subsidyType": "Public Infrastructure Solar" }
+]
+

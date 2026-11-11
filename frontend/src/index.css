@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased font-sans;
+  }
+}
+
+/* Custom range slider styling */
+input[type="range"] {
+  accent-color: #015296;
+}
+
+/* Animations for Solar Mascot */
+@keyframes pulse-subtle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+@keyframes mouthTalk {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.5);
+  }
+}
+
+@keyframes handWave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-25deg);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+@keyframes botMouthTalk {
+  0%, 100% {
+    transform: scaleY(0.7);
+  }
+  50% {
+    transform: scaleY(1.5);
+  }
+}
+
+.animate-talk {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: mouthTalk 0.22s infinite ease-in-out;
+}
+
+.animate-talk-bot {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: botMouthTalk 0.18s infinite ease-in-out;
+}
+
+.animate-wave {
+  transform-box: fill-box;
+  transform-origin: top left;
+  animation: handWave 1s infinite ease-in-out;
+}
+
+.animate-float-slow {
+  animation: floatSlow 3.5s infinite ease-in-out;
+}
