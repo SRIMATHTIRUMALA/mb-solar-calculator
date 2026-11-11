@@ -29,8 +29,8 @@ export const RobotExplanationModal: React.FC<RobotExplanationModalProps> = ({
   const formatINR = (val: number) => '₹' + Math.round(val).toLocaleString('en-IN');
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn select-none">
-      <div className="bg-gradient-to-b from-slate-900 to-slate-950 text-white rounded-3xl max-w-lg w-full p-6 sm:p-7 shadow-2xl relative border border-sky-500/30 overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md animate-fadeIn select-none overflow-y-auto">
+      <div className="bg-gradient-to-b from-slate-900 to-slate-950 text-white rounded-3xl max-w-lg w-full p-4 sm:p-7 shadow-2xl relative border border-sky-500/30 max-h-[92vh] overflow-y-auto my-auto">
         {/* Glow Effects */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -38,7 +38,7 @@ export const RobotExplanationModal: React.FC<RobotExplanationModalProps> = ({
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-slate-400 hover:text-white p-1.5 rounded-full hover:bg-white/10 transition-colors cursor-pointer z-10"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 text-slate-400 hover:text-white p-1.5 rounded-full hover:bg-white/10 transition-colors cursor-pointer z-10"
         >
           <X className="w-5 h-5" />
         </button>
@@ -48,7 +48,7 @@ export const RobotExplanationModal: React.FC<RobotExplanationModalProps> = ({
           {/* Animated Solar Mascot SVG (Waving & Talking) */}
           <div className="relative mb-2">
             <svg
-              className="w-36 h-40 drop-shadow-[0_10px_20px_rgba(2,132,199,0.4)] animate-float-slow"
+              className="w-28 h-32 sm:w-36 sm:h-40 drop-shadow-[0_10px_20px_rgba(2,132,199,0.4)] animate-float-slow"
               viewBox="0 0 240 260"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

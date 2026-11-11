@@ -46,15 +46,15 @@ export const SolarIntroScreen: React.FC<SolarIntroScreenProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 text-white overflow-hidden animate-fadeIn select-none">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 text-white overflow-y-auto py-6 sm:py-8 animate-fadeIn select-none">
       {/* Background Starry Glow & Dark Vignette */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-900/80 via-black to-black pointer-events-none"></div>
 
       {/* Top Controls: Close / Skip Button */}
-      <div className="absolute top-5 right-6 z-20 flex items-center gap-3">
+      <div className="absolute top-3 right-3 sm:top-5 sm:right-6 z-20 flex items-center gap-3">
         <button
           onClick={onClose}
-          className="flex items-center gap-1.5 text-xs font-bold text-slate-400 hover:text-white bg-white/10 hover:bg-white/20 px-3.5 py-1.5 rounded-full transition-all cursor-pointer backdrop-blur-md"
+          className="flex items-center gap-1.5 text-xs font-bold text-slate-400 hover:text-white bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-full transition-all cursor-pointer backdrop-blur-md"
         >
           <span>Skip to Calculator</span>
           <X className="w-4 h-4" />
@@ -62,14 +62,14 @@ export const SolarIntroScreen: React.FC<SolarIntroScreenProps> = ({
       </div>
 
       {/* Main 3D Animated Character Stage */}
-      <div className="relative z-10 flex flex-col items-center justify-center max-w-md w-full px-4 text-center">
+      <div className="relative z-10 flex flex-col items-center justify-center max-w-md w-full px-4 text-center my-auto">
         {/* Official MB Solar Hub Logo Header */}
-        <div className="flex flex-col items-center mb-2 animate-fadeIn">
-          <div className="bg-white px-4 py-1.5 rounded-xl shadow-[0_8px_25px_rgba(0,0,0,0.6)] border border-sky-400/50 backdrop-blur-md flex items-center justify-center">
+        <div className="flex flex-col items-center mb-1 sm:mb-2 animate-fadeIn">
+          <div className="bg-white px-3 sm:px-4 py-1 sm:py-1.5 rounded-xl shadow-[0_8px_25px_rgba(0,0,0,0.6)] border border-sky-400/50 backdrop-blur-md flex items-center justify-center">
             <img
               src="/images/mb-solar-hub-logo.jpg"
               alt="MB Solar Hub Logo"
-              className="h-9 sm:h-11 object-contain rounded"
+              className="h-8 sm:h-11 object-contain rounded"
             />
           </div>
           <div className="mt-1 flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-amber-300 tracking-wider uppercase">
@@ -79,10 +79,10 @@ export const SolarIntroScreen: React.FC<SolarIntroScreenProps> = ({
         </div>
 
         {/* Floating Sun with Radiating Ray Gear & Puffy Clouds */}
-        <div className="relative mb-1 flex items-center justify-center">
+        <div className="relative mb-0.5 sm:mb-1 flex items-center justify-center">
           {/* Left Cloud */}
           <svg
-            className="w-16 h-10 absolute -left-12 top-2 text-white/90 drop-shadow-md animate-pulse"
+            className="w-12 h-8 sm:w-16 sm:h-10 absolute -left-10 sm:-left-12 top-2 text-white/90 drop-shadow-md animate-pulse"
             viewBox="0 0 64 40"
             fill="currentColor"
           >
@@ -91,7 +91,7 @@ export const SolarIntroScreen: React.FC<SolarIntroScreenProps> = ({
 
           {/* Right Cloud */}
           <svg
-            className="w-14 h-9 absolute -right-10 top-5 text-white/90 drop-shadow-md animate-pulse"
+            className="w-11 h-7 sm:w-14 sm:h-9 absolute -right-8 sm:-right-10 top-3 sm:top-5 text-white/90 drop-shadow-md animate-pulse"
             style={{ animationDelay: '1s' }}
             viewBox="0 0 64 40"
             fill="currentColor"
@@ -100,9 +100,9 @@ export const SolarIntroScreen: React.FC<SolarIntroScreenProps> = ({
           </svg>
 
           {/* Stylized Radiating Sun Gear */}
-          <div className="relative w-20 h-20 flex items-center justify-center">
+          <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
             <svg
-              className="w-20 h-20 text-[#EA580C] animate-spin"
+              className="w-16 h-16 sm:w-20 sm:h-20 text-[#EA580C] animate-spin"
               style={{ animationDuration: '24s' }}
               viewBox="0 0 100 100"
               fill="currentColor"
@@ -121,11 +121,11 @@ export const SolarIntroScreen: React.FC<SolarIntroScreenProps> = ({
         </div>
 
         {/* 3D Animated Solar Panel Mascot Character Standing on Grassy Island */}
-        <div className="relative my-2 transition-transform duration-500 ease-out flex flex-col items-center animate-float-slow">
-          <div className="absolute bottom-4 w-48 h-8 bg-sky-500/30 rounded-full blur-xl pointer-events-none"></div>
+        <div className="relative my-1 sm:my-2 transition-transform duration-500 ease-out flex flex-col items-center animate-float-slow">
+          <div className="absolute bottom-4 w-40 sm:w-48 h-8 bg-sky-500/30 rounded-full blur-xl pointer-events-none"></div>
 
           <svg
-            className="w-60 h-68 sm:w-68 sm:h-76 drop-shadow-[0_20px_25px_rgba(0,0,0,0.6)]"
+            className="w-48 h-56 sm:w-68 sm:h-76 drop-shadow-[0_20px_25px_rgba(0,0,0,0.6)]"
             viewBox="0 0 240 280"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

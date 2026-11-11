@@ -43,13 +43,13 @@ export const ResultsDisplay: React.FC<ResultsDisplayProps> = ({
       <div className="bg-gradient-to-r from-[#015296] via-[#0267bd] to-[#015296] rounded-2xl p-6 text-white shadow-lg relative overflow-hidden">
         <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-48 h-48 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
 
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
           <div>
             <div className="inline-flex items-center gap-1.5 bg-amber-400 text-slate-900 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider mb-2">
               <Sparkles className="w-3.5 h-3.5" />
               Step 2: Solar Sizing Result
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black tracking-tight">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-black tracking-tight">
               Recommended Solar Plant: <span className="text-amber-300">{result.capacity.toFixed(1)} kW</span>
             </h2>
             <p className="text-sky-100 text-xs sm:text-sm mt-1 max-w-xl">
@@ -59,7 +59,7 @@ export const ResultsDisplay: React.FC<ResultsDisplayProps> = ({
 
           <button
             onClick={onSpeakSummary}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all shadow-md shrink-0 cursor-pointer ${
+            className={`w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all shadow-md shrink-0 cursor-pointer ${
               isSpeaking
                 ? 'bg-amber-400 text-slate-900 animate-pulse'
                 : 'bg-white/15 hover:bg-white/25 text-white backdrop-blur-sm'
@@ -92,11 +92,11 @@ export const ResultsDisplay: React.FC<ResultsDisplayProps> = ({
               onChange={(e) => onSliderChange(parseFloat(e.target.value))}
               className="w-full h-2 bg-sky-950/60 rounded-lg appearance-none cursor-pointer accent-amber-400"
             />
-            <div className="flex justify-between text-[11px] text-sky-200/70 font-mono mt-1">
+            <div className="flex justify-between text-[10px] sm:text-[11px] text-sky-200/70 font-mono mt-1">
               <span>1 kW</span>
               {result.capacity <= 15 ? (
                 <>
-                  <span>3 kW (Max Residential)</span>
+                  <span>3 kW <span className="hidden sm:inline">(Max Subsidy)</span></span>
                   <span>5 kW</span>
                   <span>10 kW</span>
                   <span>15 kW</span>
@@ -201,8 +201,8 @@ export const ResultsDisplay: React.FC<ResultsDisplayProps> = ({
           />
         </div>
 
-        {/* Performance & Savings Metrics */}
-        <div className="lg:col-span-7 grid grid-cols-2 gap-4">
+        {/* Key Operational & Financial Metrics Grid (4 Cards) */}
+        <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           {/* Electricity Savings */}
           <div className="bg-white rounded-xl p-4 border border-slate-200 shadow-xs flex flex-col justify-between">
             <div className="flex items-center gap-2 text-slate-500 text-xs font-semibold">

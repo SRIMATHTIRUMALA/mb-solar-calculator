@@ -256,7 +256,7 @@ function formatYearsTelugu(years: number): string {
       />
 
       {/* Main Content */}
-      <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6">
+      <main className="flex-1 max-w-7xl mx-auto w-full px-3 sm:px-6 lg:px-8 py-4 sm:py-6">
         {/* Animated Solar Robot Mascot ("Sunny Bot") */}
         <SolarRobotMascot
           result={result}
@@ -267,9 +267,9 @@ function formatYearsTelugu(years: number): string {
         />
 
         {/* 2-Column Split: Step 1 (Left Form) & Step 2 (Right Sizing & Subsidy Result) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Left Column: Form */}
-          <div className="lg:col-span-5 sticky top-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+          {/* Left Column: Form (Sticky ONLY on desktop) */}
+          <div className="lg:col-span-5 lg:sticky lg:top-24 w-full">
             <CalculatorForm
               states={states}
               categories={categories}
