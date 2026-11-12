@@ -173,6 +173,49 @@ export function useSpeech() {
     [stop, voiceLang, speakWithBrowser]
   );
 
+  const speakQuotationSummary = useCallback(
+    (capacityKw: number, isCommercial: boolean, lang: SupportedLanguage, fallbackText: string) => {
+      stop();
+      const roundedKw = Math.round(capacityKw);
+      const langPrefix = lang.split('-')[0];
+
+      // Instant 100% reliable pre-rendered studio Telugu voice for common solar sizes!
+      if (langPrefix === 'te') {
+        let staticAudioFile = '';
+        if (isCommercial) {
+          staticAudioFile = '/audio/summary_comm_te.mp3';
+        } else if (roundedKw >= 1 && roundedKw <= 6) {
+          staticAudioFile = `/audio/summary_${roundedKw}kw_te.mp3`;
+        }
+
+        if (staticAudioFile) {
+          const audio = new Audio(staticAudioFile);
+          currentAudioRef.current = audio;
+          audio.playbackRate = 1.15;
+          audio.onplay = () => setIsSpeaking(true);
+          audio.onended = () => {
+            setIsSpeaking(false);
+            currentAudioRef.current = null;
+          };
+          audio.onerror = () => {
+            setIsSpeaking(false);
+            currentAudioRef.current = null;
+            speak(fallbackText, lang);
+          };
+          audio.play().catch((err) => {
+            console.warn('Static audio play blocked, falling back:', err);
+            speak(fallbackText, lang);
+          });
+          return;
+        }
+      }
+
+      // Default fallback to dynamic cloud TTS or browser speech
+      speak(fallbackText, lang);
+    },
+    [stop, speak]
+  );
+
   const startListening = useCallback((onResultCallback?: (text: string) => void) => {
     const win = window as unknown as IWindow;
     const SpeechRecognition = win.SpeechRecognition || win.webkitSpeechRecognition;
@@ -219,6 +262,7 @@ export function useSpeech() {
     speak,
     speakIntro,
     speakTourStep,
+    speakQuotationSummary,
     stop,
     startListening,
   };

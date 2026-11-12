@@ -34,6 +34,7 @@ export function App() {
     speak,
     speakIntro,
     speakTourStep,
+    speakQuotationSummary,
     stop,
     startListening,
   } = useSpeech();
@@ -181,7 +182,7 @@ function formatYearsTelugu(years: number): string {
       } else {
         teluguText = `నమస్కారం అండీ! నేను MB Solar Hub నుండి సూర్య బోట్‌ని. మీ ${stateName}లో కమర్షియల్ విద్యుత్ వినియోగానికి ${capStr} సోలార్ ప్లాంట్‌ను సిఫార్సు చేస్తున్నాను. సెక్షన్ 32 కింద 40 శాతం భారీ టాక్స్ రైట్ ఆఫ్ పన్ను మినహాయింపు లభిస్తుంది! ఇది మీ వ్యాపారానికి ప్రతి సంవత్సరం దాదాపు ${saveStr} విద్యుత్ బిల్లును ఆదా చేస్తుంది!`;
       }
-      speak(teluguText, 'te-IN');
+      speakQuotationSummary(res.capacity, res.subsidyCost <= 0, 'te-IN', teluguText);
     } else if (voiceLang === 'hi-IN') {
       let hindiText: string;
       if (res.subsidyCost > 0) {
