@@ -72,18 +72,18 @@ def test_installation_cost_tiers():
     assert calculate_installation_cost(1.0) == 75000.0
     # 2 kW: 140,000
     assert calculate_installation_cost(2.0) == 140000.0
-    # 3 kW: 200,000 (Base)
+    # 3 kW: 200,000
     assert calculate_installation_cost(3.0) == 200000.0
-    # 4 kW: 260,000 (+60k)
-    assert calculate_installation_cost(4.0) == 260000.0
-    # 5 kW: 320,000 (+60k as requested by Sir)
-    assert calculate_installation_cost(5.0) == 320000.0
-    # 6 kW: 380,000 (+60k)
-    assert calculate_installation_cost(6.0) == 380000.0
-    # 8 kW: 500,000
-    assert calculate_installation_cost(8.0) == 500000.0
-    # 10 kW: 620,000
-    assert calculate_installation_cost(10.0) == 620000.0
+    # 4 kW: 200,000 (4 kW also 2 Lakhs as specified by Sir)
+    assert calculate_installation_cost(4.0) == 200000.0
+    # 5 kW: 260,000 (+60k upon next kW)
+    assert calculate_installation_cost(5.0) == 260000.0
+    # 6 kW: 320,000 (+60k)
+    assert calculate_installation_cost(6.0) == 320000.0
+    # 8 kW: 440,000
+    assert calculate_installation_cost(8.0) == 440000.0
+    # 10 kW: 560,000
+    assert calculate_installation_cost(10.0) == 560000.0
 
 def test_financial_analysis_protection():
     # Zero division protection
