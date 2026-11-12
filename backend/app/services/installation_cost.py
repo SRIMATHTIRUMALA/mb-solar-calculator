@@ -9,28 +9,29 @@ DCR_PRICE_TABLE = {
     2.0: 140000.0,
     3.0: 200000.0,
     4.0: 260000.0,
-    5.0: 310000.0,
-    6.0: 360000.0,
-    7.0: 420000.0,
-    8.0: 480000.0,
-    9.0: 540000.0,
-    10.0: 600000.0,
+    5.0: 320000.0,
+    6.0: 380000.0,
+    7.0: 440000.0,
+    8.0: 500000.0,
+    9.0: 560000.0,
+    10.0: 620000.0,
 }
 
 def calculate_installation_cost(capacity_kw: float, category: int = 1) -> float:
     """
     Turnkey installation cost (DCR Panels + Inverter + Structure + Wiring + Net Meter + Labor).
-    For residential (category 1): matches the official PM Surya Ghar DCR Price List:
+    For residential (category 1):
       - 1 kW:  75,000 INR
       - 2 kW: 140,000 INR
-      - 3 kW: 200,000 INR
-      - 4 kW: 260,000 INR
-      - 5 kW: 310,000 INR
-      - 6 kW: 360,000 INR
-      - 7 kW: 420,000 INR
-      - 8 kW: 480,000 INR
-      - 9 kW: 540,000 INR
-      - 10 kW: 600,000 INR
+      - 3 kW: 200,000 INR (Base)
+      - For each additional kW above 3 kW: add exactly +60,000 INR/kW:
+        * 4 kW:  260,000 INR
+        * 5 kW:  320,000 INR
+        * 6 kW:  380,000 INR
+        * 7 kW:  440,000 INR
+        * 8 kW:  500,000 INR
+        * 9 kW:  560,000 INR
+        * 10 kW: 620,000 INR
     """
     if category == 1 and capacity_kw <= 10.0:
         floor_kw = int(capacity_kw)

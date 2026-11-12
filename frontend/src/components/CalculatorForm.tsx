@@ -9,6 +9,7 @@ interface CalculatorFormProps {
   onCalculate: (data: CalculationRequest) => void;
   onStartSpeechInput: (targetField: string) => void;
   isListening: boolean;
+  onStartTour?: () => void;
 }
 
 export const CalculatorForm: React.FC<CalculatorFormProps> = ({
@@ -18,6 +19,7 @@ export const CalculatorForm: React.FC<CalculatorFormProps> = ({
   onCalculate,
   onStartSpeechInput,
   isListening,
+  onStartTour,
 }) => {
   const [stateId, setStateId] = useState<number>(2); // Default to Andhra Pradesh
   const [category, setCategory] = useState<number>(1); // Default to Residential
@@ -101,15 +103,30 @@ export const CalculatorForm: React.FC<CalculatorFormProps> = ({
           </p>
         </div>
 
-        <button
-          type="button"
-          onClick={handleReset}
-          className="flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-slate-800 transition-colors p-2 rounded-lg hover:bg-slate-100 cursor-pointer"
-          title="Reset form"
-        >
-          <RotateCcw className="w-3.5 h-3.5" />
-          <span className="hidden sm:inline">Reset</span>
-        </button>
+        <div className="flex items-center gap-2">
+          {onStartTour && (
+            <button
+              type="button"
+              onClick={onStartTour}
+              className="flex items-center gap-1.5 text-xs font-bold text-amber-800 bg-amber-50 hover:bg-amber-100 border border-amber-300 transition-all px-2.5 py-1.5 rounded-lg cursor-pointer shadow-xs active:scale-95"
+              title="Start interactive walkthrough with Surya Bot"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-amber-600 animate-spin" style={{ animationDuration: '4s' }} />
+              <span className="hidden sm:inline">గైడ్ టూర్ /</span>
+              <span>Guide Tour</span>
+            </button>
+          )}
+
+          <button
+            type="button"
+            onClick={handleReset}
+            className="flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-slate-800 transition-colors p-2 rounded-lg hover:bg-slate-100 cursor-pointer"
+            title="Reset form"
+          >
+            <RotateCcw className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">Reset</span>
+          </button>
+        </div>
       </div>
 
       {errorMsg && (
@@ -119,8 +136,8 @@ export const CalculatorForm: React.FC<CalculatorFormProps> = ({
       )}
 
       <form onSubmit={handleSubmit} className="space-y-5">
-        {/* State Selector */}
-        <div>
+        {/* Step 1: State Selector */}
+        <div id="tour-step-state" className="p-2 -m-2 rounded-2xl transition-all duration-300">
           <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2 flex items-center gap-1.5">
             <MapPin className="w-3.5 h-3.5 text-[#015296]" />
             Select Your State / UT <span className="text-red-500">*</span>
@@ -143,8 +160,8 @@ export const CalculatorForm: React.FC<CalculatorFormProps> = ({
           <p className="text-[11px] text-slate-400 mt-1">Applies local DISCOM electricity rates and solar sunlight hours</p>
         </div>
 
-        {/* Consumer Category */}
-        <div>
+        {/* Step 2: Consumer Category */}
+        <div id="tour-step-category" className="p-2 -m-2 rounded-2xl transition-all duration-300">
           <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2 flex items-center gap-1.5">
             <Building2 className="w-3.5 h-3.5 text-[#015296]" />
             Customer Category <span className="text-red-500">*</span>
@@ -169,8 +186,8 @@ export const CalculatorForm: React.FC<CalculatorFormProps> = ({
           </p>
         </div>
 
-        {/* Average Monthly Bill with Voice Dictation */}
-        <div>
+        {/* Step 3: Average Monthly Bill with Voice Dictation */}
+        <div id="tour-step-bill" className="p-2 -m-2 rounded-2xl transition-all duration-300">
           <div className="flex items-center justify-between mb-2">
             <label className="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
               <Zap className="w-3.5 h-3.5 text-amber-500" />
@@ -230,6 +247,7 @@ export const CalculatorForm: React.FC<CalculatorFormProps> = ({
 
         {/* Submit button */}
         <button
+          id="tour-step-submit"
           type="submit"
           disabled={isLoading}
           className="w-full bg-[#015296] hover:bg-[#014278] active:scale-[0.99] text-white py-4 px-6 rounded-xl font-black text-base shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-60 cursor-pointer mt-4"

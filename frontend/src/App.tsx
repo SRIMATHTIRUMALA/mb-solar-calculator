@@ -6,6 +6,7 @@ import { SolarRobotMascot } from './components/SolarRobotMascot';
 import { MBSolarHubCategoryModal } from './components/MBSolarHubCategoryModal';
 import { SolarIntroScreen } from './components/SolarIntroScreen';
 import { RobotExplanationModal } from './components/RobotExplanationModal';
+import { InteractiveTour } from './components/InteractiveTour';
 import type { StateOption, CategoryOption, CalculationRequest, CalculationResult } from './types';
 import { fetchStates, fetchCategories, calculateSolar, recalculateSubsidy } from './services/api';
 import { useSpeech, type SupportedLanguage } from './hooks/useSpeech';
@@ -22,6 +23,7 @@ export function App() {
   const [isVendorModalOpen, setIsVendorModalOpen] = useState<boolean>(false);
   const [showIntroScreen, setShowIntroScreen] = useState<boolean>(true); // Welcome mascot intro on load!
   const [showRobotExplanation, setShowRobotExplanation] = useState<boolean>(false); // Mascot explains after calculate!
+  const [showTour, setShowTour] = useState<boolean>(false); // Interactive step-by-step walkthrough!
 
   // Speech Hook
   const {
@@ -31,6 +33,7 @@ export function App() {
     setVoiceLang,
     speak,
     speakIntro,
+    speakTourStep,
     stop,
     startListening,
   } = useSpeech();
@@ -67,6 +70,10 @@ export function App() {
   const handleProceedFromIntro = (lang: SupportedLanguage) => {
     setVoiceLang(lang);
     setShowIntroScreen(false);
+    // Auto-launch guided walkthrough tour with Surya Bot pointing arrows
+    setTimeout(() => {
+      setShowTour(true);
+    }, 450);
   };
 
   const handleCalculate = async (payload: CalculationRequest) => {
@@ -170,9 +177,9 @@ function formatYearsTelugu(years: number): string {
       if (res.subsidyCost > 0) {
         const subStr = formatCurrencyTelugu(res.subsidyCost);
         const netStr = formatCurrencyTelugu(res.consumerShare);
-        teluguText = `అద్భుతం! నేను MB Solar Hub నుండి సూర్య బోట్‌ను. మీ ${stateName}లో కరెంట్ బిల్లు ప్రకారం, మేము ${capStr} సోలార్ ప్లాంట్‌ను సిఫార్సు చేస్తున్నాము. మీరు పీఎం సూర్య ఘర్ పథకం కింద ${subStr} ప్రభుత్వ సబ్సిడీని పొందుతారు. మీ నికర ఖర్చు ${netStr} మాత్రమే. ఇది ప్రతి సంవత్సరం మీకు దాదాపు ${saveStr} కరెంట్ బిల్లును ఆదా చేస్తుంది! పెట్టుబడి రికవరీ ${paybackStr} పూర్తవుతుంది.`;
+        teluguText = `నమస్కారం అండీ! నేను MB Solar Hub నుండి సూర్య బోట్‌ని. మీ ${stateName}లో కరెంట్ బిల్లు ప్రకారం, ${capStr} సూపర్ సోలార్ ప్లాంట్‌ను సిఫార్సు చేస్తున్నాను. మీకు పీఎం సూర్య ఘర్ పథకం కింద ఏకంగా ${subStr} భారీ ప్రభుత్వ సబ్సిడీ వస్తుంది! మీ నికర ఖర్చు ${netStr} మాత్రమే. ప్రతి సంవత్సరం మీకు దాదాపు ${saveStr} కరెంట్ బిల్లు ఆదా అవుతుంది! పెట్టుబడి రికవరీ ${paybackStr} పూర్తవుతుంది!`;
       } else {
-        teluguText = `అద్భుతం! నేను MB Solar Hub నుండి సూర్య బోట్‌ను. మీ ${stateName}లో కమర్షియల్ విద్యుత్ వినియోగానికి మేము ${capStr} సోలార్ ప్లాంట్‌ను సిఫార్సు చేస్తున్నాము. కమర్షియల్ ప్రాజెక్ట్‌లకు సెక్షన్ 32 కింద 40 శాతం యాక్సిలరేటెడ్ డిప్రిసియేషన్ పన్ను మినహాయింపు లభిస్తుంది! ఇది మీ వ్యాపారానికి ప్రతి సంవత్సరం దాదాపు ${saveStr} విద్యుత్ బిల్లును ఆదా చేస్తుంది. పెట్టుబడి రికవరీ ${paybackStr} పూర్తవుతుంది.`;
+        teluguText = `నమస్కారం అండీ! నేను MB Solar Hub నుండి సూర్య బోట్‌ని. మీ ${stateName}లో కమర్షియల్ విద్యుత్ వినియోగానికి ${capStr} సోలార్ ప్లాంట్‌ను సిఫార్సు చేస్తున్నాను. సెక్షన్ 32 కింద 40 శాతం భారీ టాక్స్ రైట్ ఆఫ్ పన్ను మినహాయింపు లభిస్తుంది! ఇది మీ వ్యాపారానికి ప్రతి సంవత్సరం దాదాపు ${saveStr} విద్యుత్ బిల్లును ఆదా చేస్తుంది!`;
       }
       speak(teluguText, 'te-IN');
     } else if (voiceLang === 'hi-IN') {
@@ -277,6 +284,7 @@ function formatYearsTelugu(years: number): string {
               onCalculate={handleCalculate}
               onStartSpeechInput={handleSpeechInput}
               isListening={isListening}
+              onStartTour={() => setShowTour(true)}
             />
           </div>
 
@@ -346,6 +354,21 @@ function formatYearsTelugu(years: number): string {
         isSpeaking={isSpeaking}
         onReplaySpeech={() => result && generateAndSpeakSummary(result)}
         voiceLang={voiceLang}
+      />
+
+      {/* Interactive Step-by-Step Walkthrough with Surya Bot Pointers */}
+      <InteractiveTour
+        isOpen={showTour}
+        onClose={() => setShowTour(false)}
+        onCompleteAndCalculate={() => {
+          setShowTour(false);
+          if (lastRequest) {
+            handleCalculate(lastRequest);
+          }
+        }}
+        voiceLang={voiceLang}
+        speakTourStep={speakTourStep}
+        stopSpeech={stop}
       />
     </div>
   );

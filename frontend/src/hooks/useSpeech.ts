@@ -46,8 +46,9 @@ export function useSpeech() {
     window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = lang;
-    utterance.rate = 0.95;
-    utterance.pitch = 1.0;
+    // Lively, energetic cadence - eliminated sluggish/dull ("nirsamga") pace
+    utterance.rate = lang === 'te-IN' ? 1.15 : 1.05;
+    utterance.pitch = lang === 'te-IN' ? 1.10 : 1.05;
 
     const voices = window.speechSynthesis.getVoices();
     const voice = voices.find(
@@ -71,7 +72,7 @@ export function useSpeech() {
       const audioUrl = `/audio/intro_${langKey}.mp3`;
       const audio = new Audio(audioUrl);
       currentAudioRef.current = audio;
-      audio.playbackRate = 1.1; // Active, brisk, natural pacing
+      audio.playbackRate = 1.16; // Upbeat, brisk, vibrant pacing
 
       audio.onplay = () => setIsSpeaking(true);
       audio.onended = () => {
@@ -87,6 +88,36 @@ export function useSpeech() {
 
       audio.play().catch((err) => {
         console.warn('Intro audio playback error:', err);
+        setIsSpeaking(false);
+        if (onEnd) onEnd();
+      });
+    },
+    [stop]
+  );
+
+  const speakTourStep = useCallback(
+    (step: number, lang: SupportedLanguage, onEnd?: () => void) => {
+      stop();
+      const langKey = lang === 'te-IN' ? 'te' : lang === 'hi-IN' ? 'hi' : 'en';
+      const audioUrl = `/audio/tour_step${step}_${langKey}.mp3`;
+      const audio = new Audio(audioUrl);
+      currentAudioRef.current = audio;
+      audio.playbackRate = 1.15; // Lively step-by-step guidance pacing
+
+      audio.onplay = () => setIsSpeaking(true);
+      audio.onended = () => {
+        setIsSpeaking(false);
+        currentAudioRef.current = null;
+        if (onEnd) onEnd();
+      };
+      audio.onerror = () => {
+        setIsSpeaking(false);
+        currentAudioRef.current = null;
+        if (onEnd) onEnd();
+      };
+
+      audio.play().catch((err) => {
+        console.warn('Tour step audio error:', err);
         setIsSpeaking(false);
         if (onEnd) onEnd();
       });
@@ -112,7 +143,7 @@ export function useSpeech() {
           const audioUrl = `/api/tts?text=${encodeURIComponent(text)}&lang=${langPrefix}`;
           const audio = new Audio(audioUrl);
           currentAudioRef.current = audio;
-          audio.playbackRate = 1.1; // Active, brisk cadence
+          audio.playbackRate = 1.16; // Active, brisk cadence
 
           audio.onplay = () => setIsSpeaking(true);
           audio.onended = () => {
@@ -187,6 +218,7 @@ export function useSpeech() {
     setVoiceLang,
     speak,
     speakIntro,
+    speakTourStep,
     stop,
     startListening,
   };

@@ -297,9 +297,9 @@ export const SolarIntroScreen: React.FC<SolarIntroScreenProps> = ({
               <p className="text-sm sm:text-base font-medium text-white leading-relaxed">
                 {chosenLang === 'te-IN' ? (
                   <>
-                    "నమస్కారం! నేను <span className="text-sky-300 font-bold">MB Solar Hub</span> నుండి మీ{' '}
-                    <span className="text-amber-300 font-bold">సూర్య బోట్‌ని</span>. మీ ఇంటికి బెస్ట్ సోలార్ ప్లాంట్
-                    మరియు <span className="text-emerald-400 font-bold">₹78,000 సబ్సిడీని</span> లెక్కిద్దాం. రండి, స్టార్ట్ చేద్దాం!"
+                    "నమస్కారం అండీ! నేను <span className="text-sky-300 font-bold">MB Solar Hub</span> నుండి మీ{' '}
+                    <span className="text-amber-300 font-bold">సూర్య బోట్‌ని!</span> రండి, మీ ఇంటికి సూపర్ సోలార్ ప్లాంట్
+                    మరియు <span className="text-emerald-400 font-bold">₹78,000 ప్రభుత్వ సబ్సిడీని</span> క్షణాల్లో లెక్కిద్దాం! రండి స్టార్ట్ చేద్దాం!"
                   </>
                 ) : chosenLang === 'hi-IN' ? (
                   <>
